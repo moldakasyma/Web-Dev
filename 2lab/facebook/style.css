@@ -1,6 +1,6 @@
 body{
-    margin: 0;
-    padding : 0;
+    margin: 0; /* used to create space around elements, outside of any defined borders */
+    padding : 0; /*used to generate space around an element's content, inside of any defined borders.*/
     background-color: #f0f2f5;
     font-family: Arial, sans-serif;
 
@@ -158,9 +158,19 @@ body{
     padding-top: 8px;
     font-size: 12px;
 }
-/* .text2{
-    color: gray;
-    padding-right: 20px;
-    padding-top: 20px;
-    font-size: 12px;
-} */
+.createLink{
+    position: absolute;
+    width: 30%;
+    text-align: center;
+    top:600px;
+    left: 790px;
+    font-size: 13px;
+
+}
+.createLink a{
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+}
+
+
