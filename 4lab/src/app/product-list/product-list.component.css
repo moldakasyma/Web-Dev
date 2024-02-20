@@ -1,0 +1,50 @@
+.products {
+  width: 25%;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 50px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.imag {
+  width: 180px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.imag img {
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
+
+
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  min-height: 600px;
+}
+body {
+  background-color: #222224;
+  background-image: linear-gradient(#17191f, #252a35);
+  height: 100%;
+  font-family: 'roboto', 'helvetica neue', arial, sans-serif;
+}

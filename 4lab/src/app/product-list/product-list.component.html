@@ -1,0 +1,41 @@
+
+<div *ngFor="let product of products" class = "products">
+  <h3>
+    <a [title]="product.name + ' details'"
+    [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+  </h3>
+  <div class="imag">
+      <img [src] = "product.img" alt="Product Image">
+  </div>
+
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  <p *ngIf="product.rating">
+    Rating: {{ product.rating }} ★
+  </p>
+  <p *ngIf="product.price">
+    Cost: {{ product.price }} 
+  </p>
+
+  <button type="button" (click)="share(product.source)">
+    Share
+  </button>
+  <button type="button" style="margin-top:10px">Buy</button>
+  
+  <app-product-alerts
+    [product]="product" 
+    (notify)="onNotify()">
+  </app-product-alerts>
+
+  <button type="button" (click)="learnMore(product.source)">Learn more</button>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
