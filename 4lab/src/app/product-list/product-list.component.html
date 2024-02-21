@@ -18,7 +18,7 @@
     Rating: {{ product.rating }} ★
   </p>
   <p *ngIf="product.price">
-    Cost: {{ product.price }} 
+    Cost: {{ product.price | currency}} 
   </p>
 
   <button type="button" (click)="share(product.source)">
@@ -31,7 +31,7 @@
     (notify)="onNotify()">
   </app-product-alerts>
 
-  <button type="button" (click)="learnMore(product.source)">Learn more</button>
+  <button type="button" id="source"><a href={{product.source}} style="color:white">Learn more</a></button>
 </div>
 
 <!-- 

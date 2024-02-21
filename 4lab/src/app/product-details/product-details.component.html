@@ -5,21 +5,13 @@
   <h3>{{ product.name }}</h3>
 
   <div class="imag">
-  
-
-      <img [src] = "product.img" alt="Product image">
-
-
-    <input type="checkbox" class="faux-ui-facia">
-  
-     
-    <!-- <div class="counter" count="5"> / 3</div> -->
+    <img [src] = "product.img" alt="Product image">
    
   </div>
   
   
 
-  <h4>{{ product.price}}</h4>
+  <h4>{{ product.price | currency}}</h4>
   <p>{{ product.description }}</p>
-  <button type="button">Buy</button>
+  <button type="button" (click)="addToCart(product)">Buy</button>
 </div>
