@@ -1,0 +1,57 @@
+<div class="header">
+<input type="text" placeholder="Search">
+<button type="button" class="search">Find</button>
+  <button class="tablinks" (click)="updateFilteredCategory('None')">All</button>
+  <button class="tablinks" (click)="updateFilteredCategory('Gadget')">Gadget</button>
+  <button class="tablinks" (click)="updateFilteredCategory('TV,Audio,Video')" >TV,Audio,Video</button>
+  <button class="tablinks" (click)="updateFilteredCategory('Beauty and Health')" > Beauty and Health</button>
+  <button class="tablinks" (click)="updateFilteredCategory('Household goods')" > Household goods </button>
+
+ 
+</div>
+<div *ngFor="let product of filtered_products" class = "products">
+  <div class="imag">
+    <img [src] = "product.img" alt="Product Image">
+</div>
+  <h3>
+    <a [title]="product.name + ' details'"
+    [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+    <button class="like" type="button" (click)="like(product)">☆</button>
+  </h3>
+ 
+
+
+  <p *ngIf="product.description">
+    <strong>Description:</strong> {{ product.description }}
+  </p>
+  <p *ngIf="product.rating">
+    <strong>Rating: </strong>{{ product.rating }} ★
+  </p>
+  <p *ngIf="product.price">
+    <strong>Cost:</strong> {{ product.price | currency}} 
+  </p>
+  <p *ngIf="product.likes">
+    <strong>Favorites:</strong>  {{product.likes}}
+  </p>
+ 
+  <button class="delete" type="button" (click)="delete(product)">Delete</button>
+  <button type="button" (click)="share(product.source)">
+    Share
+  </button>
+  <button type="button" style="margin-top:10px">Buy</button>
+  
+  <app-product-alerts
+    [product]="product" 
+    (notify)="onNotify()">
+  </app-product-alerts>
+
+  <button type="button" id="source"><a href={{product.source}} style="color:white">Learn more</a></button>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
